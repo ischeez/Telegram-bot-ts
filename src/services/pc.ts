@@ -1,17 +1,17 @@
-import { exec } from "node:child_process";
+import { IOperationSystem } from "../bot/typings";
 
 export class PcService {
-        public launchGame():void{
-            console.log('Поступила команда на запуск');
+    constructor (private _os: IOperationSystem){}
 
-            const command = 'calc'
-            exec(command, (error, stdout, stderr)=>{
-                if (error) {
-                    console.error(`Ошибка запуска:`, error);
-                    return;
-                }
+    public openCalculator(): void{
+        this._os.openCalculator();
+    }
 
-                console.log('Программа успешно запушена!')
-            })
+    public closeCalculator():void {
+        this._os.closeCalculator();
+    }
+        public launchGame(gamePath: string):void{
+        this._os.launchGame(gamePath);
         }
-}
+
+    }

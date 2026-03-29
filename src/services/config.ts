@@ -33,6 +33,25 @@ export  class ConfigService {
 
         return response;
     }
-}
+    
 
+    public getNumber(key: string): number{
+           const response = this._config[key];
+
+
+        if (!response){
+            throw new Error (`Нет такого ключа как: ${key} `);
+
+        }
+
+        if (Number.isNaN(response)){
+            throw new Error (`Значение не является числом: ${key} `);
+        }
+
+
+        return Number(response);
+    }
+
+
+}
 

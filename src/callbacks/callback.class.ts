@@ -1,7 +1,7 @@
 import { Context } from "node:vm";
 
-export abstract class Command {
-    abstract readonly commandName: string;
+export abstract class Callback {
+    abstract readonly callbackName: string;
 
     abstract execute(ctx: Context): void | Promise<void>;
 
