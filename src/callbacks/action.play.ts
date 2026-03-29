@@ -1,4 +1,4 @@
-import { Context } from "node:vm";
+import { Context } from "grammy";
 import { Callback } from "./callback.class";
 import { PcControlFacade } from "../services/facade/pc.control";
 

@@ -1,4 +1,4 @@
-import { Context } from "node:vm";
+import { Context } from "grammy";
 
 export abstract class Callback {
     abstract readonly callbackName: string;
